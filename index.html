@@ -414,6 +414,10 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 .radios input{width:18px;height:18px;accent-color:var(--green)}
 
 .refer-grid{grid-template-columns:1.5fr 1fr;align-items:start}
+/* cards in wrapped grid columns (e.g. Contact page) fill the column so both end level */
+.visit-grid>div:not(.card){display:flex;flex-direction:column}
+.visit-grid>div:not(.card)>.card{flex:1}
+.refer-grid>div:not(.card){display:grid;align-content:start}
 
 /* privacy / prose page */
 .doc-page{max-width:820px}
@@ -468,7 +472,7 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 .demo-logo svg{width:44px;height:52px}
 .demo-logo b{display:block;font-weight:900;font-size:1.05rem;letter-spacing:.03em;color:#728526;line-height:1}
 .demo-logo small{display:block;font-weight:800;font-size:.62rem;letter-spacing:.14em;color:#562604;line-height:1.6}
-.map-ph{min-height:300px;height:100%;display:grid;place-items:center;align-content:center;gap:8px;background:repeating-linear-gradient(45deg,#EEF5FF 0 18px,#E4EEFF 18px 36px);font-weight:800;color:#5E6274}
+.map-ph{height:300px;display:grid;place-items:center;align-content:center;gap:8px;background:repeating-linear-gradient(45deg,#EEF5FF 0 18px,#E4EEFF 18px 36px);font-weight:800;color:#5E6274}
 .map-ph svg{width:64px;height:64px}
 .demo-note{font-size:.85rem!important;color:#8A3A05!important;font-weight:800}
 [hidden]{display:none!important}
@@ -633,7 +637,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
   <section id="services">
     <div class="wrap">
       <div class="sec-head center">
-        <span class="eyebrow">What we do</span>
         <h2>healthy teeth, happy kids</h2>
         <p class="lead">Everything your child needs, from their very first tooth to their teenage years, all under one friendly roof.</p>
       </div>
@@ -646,7 +649,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
   <section class="first" id="first-visit">
     <div class="wrap">
       <div class="sec-head center">
-        <span class="eyebrow">Your first visit</span>
         <h2>4 easy steps to a happy first visit</h2>
         <p class="lead">Bring your little one in by their first tooth or first birthday, whichever comes first.</p>
       </div>
@@ -671,7 +673,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
         <img class="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300' preserveAspectRatio='xMidYMid slice'%3E%3Crect width='400' height='300' fill='%23CDEBD3'/%3E%3Ccircle cx='310' cy='80' r='38' fill='%23fff' opacity='.7'/%3E%3Cpath d='M0 230 Q90 170 180 215 T400 200 V300 H0Z' fill='%232FB344' opacity='.55'/%3E%3Cpath d='M0 260 Q120 215 230 250 T400 240 V300 H0Z' fill='%232FB344' opacity='.85'/%3E%3Cg transform='translate%28170 112%29' fill='none' stroke='%232B2B3A' stroke-width='5' stroke-linejoin='round' opacity='.55'%3E%3Crect x='0' y='10' width='60' height='42' rx='8'/%3E%3Ccircle cx='30' cy='31' r='11'/%3E%3Cpath d='M18 10 l5 -8 h14 l5 8'/%3E%3C/g%3E%3Ctext x='200' y='192' text-anchor='middle' font-family='Nunito,Arial' font-weight='800' font-size='17' fill='%232B2B3A' opacity='.6'%3EPhoto placeholder%3C/text%3E%3C/svg%3E" alt="Photo placeholder" loading="lazy" decoding="async">        <svg class="peek" viewBox="0 0 200 260" aria-hidden="true"><use href="#giraffe"/></svg>
       </div>
       <div class="doc">
-        <span class="eyebrow">Meet your dentist</span>
         <h2>hi, I'm Dr. Your Name!</h2>
         <div class="pills">
           <span class="pill g">Certified Pediatric Specialist</span>
@@ -690,7 +691,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
   <section class="tour" id="tour">
     <div class="wrap">
       <div class="sec-head center">
-        <span class="eyebrow">Our new home</span>
         <h2>take a peek inside</h2>
         <p class="lead">Bright, colourful rooms designed just for kids, right in the heart of Your City.</p>
       </div>
@@ -710,7 +710,7 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
   <section id="reviews">
     <div class="wrap">
       <div class="rev-top">
-        <div><span class="eyebrow">Happy families</span><h2>parents (and kids!) love us</h2></div>
+        <div><h2>parents (and kids!) love us</h2></div>
         <div class="score"><b>★</b><div><span class="stars">★★★★★</span><br><small style="font-weight:800;color:var(--slate)">Reviews on Google</small></div></div>
       </div>
       <div class="rev-grid">
@@ -747,7 +747,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
   <section id="visit">
     <div class="wrap">
       <div class="sec-head center">
-        <span class="eyebrow">Come see us</span>
         <h2>book your child's visit</h2>
         <p class="lead">Send us a request and our friendly front desk team will get back to you to confirm a time.</p>
       </div>
@@ -776,7 +775,7 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
   </form>
 </div>
         <div class="card">
-  <div class="map-ph" role="img" aria-label="Map placeholder"><svg viewBox="0 0 80 80" aria-hidden="true"><path d="M40 8 C26 8 16 18 16 31 C16 48 40 72 40 72 C40 72 64 48 64 31 C64 18 54 8 40 8 Z" fill="#FF6B9A"/><circle cx="40" cy="31" r="9" fill="#fff"/></svg><span>Map placeholder</span></div>  <div class="info">
+  <div class="map"><div class="map-ph" role="img" aria-label="Map placeholder"><svg viewBox="0 0 80 80" aria-hidden="true"><path d="M40 8 C26 8 16 18 16 31 C16 48 40 72 40 72 C40 72 64 48 64 31 C64 18 54 8 40 8 Z" fill="#FF6B9A"/><circle cx="40" cy="31" r="9" fill="#fff"/></svg><span>Map placeholder</span></div></div>  <div class="info">
     <div><span class="ic" style="background:#E6F7E9">📍</span><span><b>123 Main Street, Suite 100</b><span>Your City, Province A1B 2C3 · near the town centre</span><br><a href="#contact-us" target="_blank" rel="noopener" class="link">Get directions →</a></span></div>
     <div><span class="ic" style="background:#E5F0FF">📞</span><span><b><a href="tel:5550100000" style="color:var(--ink)">(555) 010-0000</a></b><a href="mailto:hello@yourclinic.com">hello@yourclinic.com</a></span></div>
   </div>
@@ -793,7 +792,7 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
   <div class="wrap phero-grid">
     <div>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a> <span aria-hidden="true">›</span> <span aria-current="page">About us</span></nav>
-      <span class="eyebrow">About us</span>      <h1>a dental home made <span>just for kids</span></h1>
+      <h1>a dental home made <span>just for kids</span></h1>
       <p class="lead">As your child's first dentist, we know how much a positive start matters. Our job is to make every visit comfortable and fun, and to help good habits grow with your child.</p>            <div class="hero-ctas">
         <a class="btn" href="#contact-us">Book a visit</a>
         <a class="btn btn-white" href="tel:5550100000">Call (555) 010-0000</a>
@@ -816,7 +815,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
       <svg class="peek" viewBox="0 0 200 260" aria-hidden="true"><use href="#giraffe"/></svg>
     </div>
     <div class="prose">
-      <span class="eyebrow">Meet your dentist</span>
       <h2>Dr. Your Name</h2>
       <p>Dr. Your Name was drawn to pediatric dentistry from the very beginning: the fun, innocence and honesty of children. As a parent too, they understand what really matters when you are raising little ones.</p>
       <p>She has <strong>more than ten years of experience in pediatric and special care dentistry</strong> over many years, and she loves teaching the next generation of dentists.</p>
@@ -834,7 +832,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 <section class="bg-cream">
   <div class="wrap">
     <div class="sec-head center">
-      <span class="eyebrow">Education &amp; affiliations</span>
       <h2>trained to care for growing smiles</h2>
     </div>
     <div class="fcards">
@@ -850,7 +847,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
     <div class="photo-card">
       <img class="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300' preserveAspectRatio='xMidYMid slice'%3E%3Crect width='400' height='300' fill='%23D6E6FF'/%3E%3Ccircle cx='310' cy='80' r='38' fill='%23fff' opacity='.7'/%3E%3Cpath d='M0 230 Q90 170 180 215 T400 200 V300 H0Z' fill='%232E8BFF' opacity='.55'/%3E%3Cpath d='M0 260 Q120 215 230 250 T400 240 V300 H0Z' fill='%232E8BFF' opacity='.85'/%3E%3Cg transform='translate%28170 112%29' fill='none' stroke='%232B2B3A' stroke-width='5' stroke-linejoin='round' opacity='.55'%3E%3Crect x='0' y='10' width='60' height='42' rx='8'/%3E%3Ccircle cx='30' cy='31' r='11'/%3E%3Cpath d='M18 10 l5 -8 h14 l5 8'/%3E%3C/g%3E%3Ctext x='200' y='192' text-anchor='middle' font-family='Nunito,Arial' font-weight='800' font-size='17' fill='%232B2B3A' opacity='.6'%3EPhoto placeholder%3C/text%3E%3C/svg%3E" alt="Photo placeholder" loading="lazy" decoding="async">    </div>
     <div class="prose">
-      <span class="eyebrow">Why baby teeth matter</span>
       <h2>small teeth, big job</h2>
       <p>Baby teeth are temporary, but they play a vital role. They <strong>support the growth of the jaw and face</strong> and <strong>hold space for the adult teeth</strong> to come in.</p>
       <p>Dr. Your Name's role as a pediatric dentist is to create a comfortable environment for your children and to work with you, the parents, to encourage a positive attitude towards oral health.</p>
@@ -862,7 +858,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 <section class="bg-cream">
   <div class="wrap">
     <div class="sec-head center">
-      <span class="eyebrow">Your child's visit with us</span>
       <h2>comfortable for kids, relaxing for parents</h2>
       <p class="lead">We've made extra efforts to make your visit as enjoyable as theirs.</p>
     </div>
@@ -878,7 +873,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 <section>
   <div class="wrap">
     <div class="sec-head center">
-      <span class="eyebrow">Growing up with us</span>
       <h2>from first tooth to teenage years</h2>
     </div>
     <div class="fcards two">
@@ -891,7 +885,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 <section class="tour">
   <div class="wrap">
     <div class="sec-head center">
-      <span class="eyebrow">Our new home</span>
       <h2>meet the team &amp; the space</h2>
     </div>
     <div class="tour-grid">
@@ -925,7 +918,7 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
   <div class="wrap phero-grid">
     <div>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a> <span aria-hidden="true">›</span> <span aria-current="page">First visit</span></nav>
-      <span class="eyebrow">Your first visit</span>      <h1>first tooth? <span>first visit!</span></h1>
+      <h1>first tooth? <span>first visit!</span></h1>
       <p class="lead">The best time for your child's first dental visit is when their first tooth appears, or by their first birthday, whichever comes first.</p>            <div class="hero-ctas">
         <a class="btn" href="#contact-us">Book a visit</a>
         <a class="btn btn-white" href="tel:5550100000">Call (555) 010-0000</a>
@@ -944,7 +937,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 <section>
   <div class="wrap split">
     <div class="prose">
-      <span class="eyebrow">Getting in early</span>
       <h2>when is the first visit?</h2>
       <p>Every child is unique, but on average a child's first tooth appears at around <strong>six months of age</strong>.</p>
       <p>The Canadian Academy of Pediatric Dentistry and the American Academy of Pediatric Dentistry recommend a child's first visit <strong>when the first tooth comes in, or by 12 months of age, whichever comes first</strong>.</p>
@@ -960,7 +952,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 <section class="first">
   <div class="wrap">
     <div class="sec-head center">
-      <span class="eyebrow">What to expect</span>
       <h2>4 easy steps to a happy first visit</h2>
     </div>
     <div class="steps">
@@ -975,7 +966,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 <section>
   <div class="wrap">
     <div class="sec-head center">
-      <span class="eyebrow">Ask us anything</span>
       <h2>what we'll talk about</h2>
       <p class="lead">The first visit is the perfect time to ask your pediatric dentist about:</p>
     </div>
@@ -994,7 +984,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
     <div class="photo-card">
       <img class="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300' preserveAspectRatio='xMidYMid slice'%3E%3Crect width='400' height='300' fill='%23FFD9E5'/%3E%3Ccircle cx='310' cy='80' r='38' fill='%23fff' opacity='.7'/%3E%3Cpath d='M0 230 Q90 170 180 215 T400 200 V300 H0Z' fill='%23FF6B9A' opacity='.55'/%3E%3Cpath d='M0 260 Q120 215 230 250 T400 240 V300 H0Z' fill='%23FF6B9A' opacity='.85'/%3E%3Cg transform='translate%28170 112%29' fill='none' stroke='%232B2B3A' stroke-width='5' stroke-linejoin='round' opacity='.55'%3E%3Crect x='0' y='10' width='60' height='42' rx='8'/%3E%3Ccircle cx='30' cy='31' r='11'/%3E%3Cpath d='M18 10 l5 -8 h14 l5 8'/%3E%3C/g%3E%3Ctext x='200' y='192' text-anchor='middle' font-family='Nunito,Arial' font-weight='800' font-size='17' fill='%232B2B3A' opacity='.6'%3EPhoto placeholder%3C/text%3E%3C/svg%3E" alt="Photo placeholder" loading="lazy" decoding="async">    </div>
     <div class="prose">
-      <span class="eyebrow">Ongoing care</span>
       <h2>growing up with us</h2>
       <p>At every check-up, we give a <strong>gentle and thorough cleaning</strong> to keep your child's teeth squeaky clean, then check their mouth for any developmental issues.</p>
       <p>As your children grow, you can trust Your Clinic Name to provide the same friendly, caring service, from first tooth to teenage years.</p>
@@ -1005,7 +994,7 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 
 <section class="faq-sec">
   <div class="wrap narrow">
-    <div class="sec-head center"><span class="eyebrow">Good to know</span><h2>first-visit questions</h2></div>
+    <div class="sec-head center"><h2>first-visit questions</h2></div>
     <div class="faq">
               <details open><summary>When should my child first see a dentist?</summary><div class="faq-a"><p>When their first tooth appears, or by 12 months of age, whichever comes first. This follows the recommendation of the Canadian and American Academies of Pediatric Dentistry.</p></div></details>
               <details><summary>When do baby teeth usually come in?</summary><div class="faq-a"><p>On average, a child's first tooth appears at around six months, and all of the baby teeth have usually arrived by about age three.</p></div></details>
@@ -1035,7 +1024,7 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
   <div class="wrap phero-grid">
     <div>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a> <span aria-hidden="true">›</span> <a href="#about">About</a> <span aria-hidden="true">›</span> <span aria-current="page">Why a pediatric dentist?</span></nav>
-      <span class="eyebrow">Why we're different</span>      <h1>why choose a <span>pediatric dentist?</span></h1>
+      <h1>why choose a <span>pediatric dentist?</span></h1>
       <p class="lead">Children's teeth are different from adult teeth, and so are children. Pediatric dentists are specially trained to care for both.</p>            <div class="hero-ctas">
         <a class="btn" href="#contact-us">Book a visit</a>
         <a class="btn btn-white" href="tel:5550100000">Call (555) 010-0000</a>
@@ -1066,7 +1055,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 <section class="bg-cream">
   <div class="wrap split">
     <div class="prose">
-      <span class="eyebrow">Baby teeth matter</span>
       <h2>small teeth with a very big role</h2>
       <p>Primary teeth (also called baby or milk teeth) are vital. They <strong>help direct the growth of the jaw</strong>, <strong>hold space for the adult teeth</strong> developing underneath, and help with <strong>chewing</strong> and <strong>a confident smile</strong>.</p>
       <p>Children's teeth go through many changes and are very transitional, which is why they need regular monitoring by someone who specializes in them.</p>
@@ -1079,7 +1067,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 <section>
   <div class="wrap">
     <div class="sec-head center">
-      <span class="eyebrow">Specialist training</span>
       <h2>what makes a pediatric dentist different</h2>
       <p class="lead">Pediatric dentists complete a further three years of training to become experts in:</p>
     </div>
@@ -1098,7 +1085,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
       <img class="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300' preserveAspectRatio='xMidYMid slice'%3E%3Crect width='400' height='300' fill='%23FFE0CC'/%3E%3Ccircle cx='310' cy='80' r='38' fill='%23fff' opacity='.7'/%3E%3Cpath d='M0 230 Q90 170 180 215 T400 200 V300 H0Z' fill='%23FF7A1A' opacity='.55'/%3E%3Cpath d='M0 260 Q120 215 230 250 T400 240 V300 H0Z' fill='%23FF7A1A' opacity='.85'/%3E%3Cg transform='translate%28170 112%29' fill='none' stroke='%232B2B3A' stroke-width='5' stroke-linejoin='round' opacity='.55'%3E%3Crect x='0' y='10' width='60' height='42' rx='8'/%3E%3Ccircle cx='30' cy='31' r='11'/%3E%3Cpath d='M18 10 l5 -8 h14 l5 8'/%3E%3C/g%3E%3Ctext x='200' y='192' text-anchor='middle' font-family='Nunito,Arial' font-weight='800' font-size='17' fill='%232B2B3A' opacity='.6'%3EPhoto placeholder%3C/text%3E%3C/svg%3E" alt="Photo placeholder" loading="lazy" decoding="async">      <svg class="peek" viewBox="0 0 200 260" aria-hidden="true"><use href="#giraffe"/></svg>
     </div>
     <div class="prose">
-      <span class="eyebrow">How we help</span>
       <h2>care for children with special needs</h2>
       <p>Another part of our expert training is the management of <strong>children and adults with special care needs</strong>. Dr. Your Name has extensive training and <strong>over ten years of experience</strong> caring for children with special needs, and we also care for patients with complex medical issues.</p>
       <p>Prevention is always the best policy. <strong>Regular check-ups</strong> can pick up problems early, prevent difficult and prolonged treatment, and help make sure your child isn't in pain.</p>
@@ -1110,7 +1096,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 <section>
   <div class="wrap narrow">
     <div class="sec-head center">
-      <span class="eyebrow">Our approach</span>
       <h2>good habits for life</h2>
     </div>
     <ul class="ticks cols">
@@ -1144,7 +1129,7 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
   <div class="wrap phero-grid">
     <div>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a> <span aria-hidden="true">›</span> <a href="#services">Services</a> <span aria-hidden="true">›</span> <span aria-current="page">Prevention</span></nav>
-      <span class="eyebrow">Prevention</span>      <h1>prevention is better than <span>a cure</span></h1>
+      <h1>prevention is better than <span>a cure</span></h1>
       <p class="lead">Pediatric dentistry is all about prevention. Regular visits and a strong routine at home keep your kids' smiles healthy and help avoid the unexpected cost of treatment.</p>            <div class="hero-ctas">
         <a class="btn" href="#contact-us">Book a visit</a>
         <a class="btn btn-white" href="tel:5550100000">Call (555) 010-0000</a>
@@ -1164,7 +1149,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 <section>
   <div class="wrap split">
     <div class="prose">
-      <span class="eyebrow">How it works</span>
       <h2>stopping cavities before they start</h2>
       <p>We closely monitor the progress of your child's dental health and give <strong>thorough cleanings</strong> that stop plaque and food debris from building up on their teeth.</p>
       <p>By scheduling regular appointments and keeping up a strong routine of brushing and flossing at home, you can avoid the unexpected cost of restorative dental procedures.</p>
@@ -1179,7 +1163,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 <section class="bg-cream">
   <div class="wrap">
     <div class="sec-head center">
-      <span class="eyebrow">Our prevention toolkit</span>
       <h2>five ways we protect little teeth</h2>
     </div>
     <div class="fcards">
@@ -1195,7 +1178,7 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 
 <section class="faq-sec">
   <div class="wrap narrow">
-    <div class="sec-head center"><span class="eyebrow">Good to know</span><h2>prevention questions</h2></div>
+    <div class="sec-head center"><h2>prevention questions</h2></div>
     <div class="faq">
               <details open><summary>How often should my child brush?</summary><div class="faq-a"><p>Twice a day, for at least two minutes each time. Encourage your child to brush on their own, then finish the job for them.</p></div></details>
               <details><summary>What is fluoride varnish?</summary><div class="faq-a"><p>A protective coating painted onto the teeth. The Canadian and American Academies of Pediatric Dentistry recommend it twice a year to greatly reduce the chance of tooth decay.</p></div></details>
@@ -1205,7 +1188,7 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
   </div>
 </section>
 
-<section class="related"><div class="wrap"><div class="sec-head center"><span class="eyebrow">Keep exploring</span><h2>more ways we care for smiles</h2></div><div class="svc-grid"><a class="svc" href="#oral-hygiene-diet"><div class="svc-top" style="background:var(--pink)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-brush"/></svg></div><div class="svc-body"><span class="tag">Babies &amp; up</span><h3>Oral Hygiene &amp; Diet</h3><p>Brushing habits that last a lifetime: twice a day, two minutes, the right amount of toothpaste and tooth-friendly snacks.</p><span class="more">Learn more →</span></div></a><a class="svc" href="#orthodontics"><div class="svc-top" style="background:var(--sky)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-braces"/></svg></div><div class="svc-body"><span class="tag">Ages 6–13</span><h3>Early Orthodontics</h3><p>Catch crowding, narrow arches, protruding teeth and thumb-sucking habits early, while your child is still growing.</p><span class="more">Learn more →</span></div></a><a class="svc" href="#digital-x-rays"><div class="svc-top" style="background:var(--sun)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-xray"/></svg></div><div class="svc-body"><span class="tag">Safe &amp; low-dose</span><h3>Digital X-Rays</h3><p>See what the eye can't. Our digital X-rays use up to 70% less radiation than traditional film.</p><span class="more">Learn more →</span></div></a></div></div></section><section class="cta-wrap">
+<section class="related"><div class="wrap"><div class="sec-head center"><h2>more ways we care for smiles</h2></div><div class="svc-grid"><a class="svc" href="#oral-hygiene-diet"><div class="svc-top" style="background:var(--pink)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-brush"/></svg></div><div class="svc-body"><span class="tag">Babies &amp; up</span><h3>Oral Hygiene &amp; Diet</h3><p>Brushing habits that last a lifetime: twice a day, two minutes, the right amount of toothpaste and tooth-friendly snacks.</p><span class="more">Learn more →</span></div></a><a class="svc" href="#orthodontics"><div class="svc-top" style="background:var(--sky)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-braces"/></svg></div><div class="svc-body"><span class="tag">Ages 6–13</span><h3>Early Orthodontics</h3><p>Catch crowding, narrow arches, protruding teeth and thumb-sucking habits early, while your child is still growing.</p><span class="more">Learn more →</span></div></a><a class="svc" href="#digital-x-rays"><div class="svc-top" style="background:var(--sun)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-xray"/></svg></div><div class="svc-body"><span class="tag">Safe &amp; low-dose</span><h3>Digital X-Rays</h3><p>See what the eye can't. Our digital X-rays use up to 70% less radiation than traditional film.</p><span class="more">Learn more →</span></div></a></div></div></section><section class="cta-wrap">
   <div class="wrap">
     <div class="cta-band">
       <svg class="cta-giraffe" viewBox="0 0 200 260" aria-hidden="true"><use href="#giraffe"/></svg>
@@ -1225,7 +1208,7 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
   <div class="wrap phero-grid">
     <div>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a> <span aria-hidden="true">›</span> <a href="#services">Services</a> <span aria-hidden="true">›</span> <span aria-current="page">Oral hygiene & diet</span></nav>
-      <span class="eyebrow">Oral hygiene & diet</span>      <h1>healthy mouth, <span>healthy body</span></h1>
+      <h1>healthy mouth, <span>healthy body</span></h1>
       <p class="lead">We give expert care to your child's developing smile, and we work with you to build brushing habits that last a lifetime.</p>            <div class="hero-ctas">
         <a class="btn" href="#contact-us">Book a visit</a>
         <a class="btn btn-white" href="tel:5550100000">Call (555) 010-0000</a>
@@ -1245,7 +1228,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 <section>
   <div class="wrap split">
     <div class="prose">
-      <span class="eyebrow">What we do</span>
       <h2>habits that stick</h2>
       <p>At Your Clinic Name we pay particular attention to oral hygiene habits. We help by:</p>
       <ul class="ticks">
@@ -1263,7 +1245,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 <section class="bg-cream">
   <div class="wrap">
     <div class="sec-head center">
-      <span class="eyebrow">Growing smiles</span>
       <h2>what happens, and when</h2>
       <p class="lead">Ages 6 to 13 are a time of big change in your child's mouth. Keeping up good hygiene through this transition is very important.</p>
     </div>
@@ -1279,7 +1260,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 <section>
   <div class="wrap">
     <div class="sec-head center">
-      <span class="eyebrow">Keeping a schedule</span>
       <h2>the cleaning routine</h2>
     </div>
     <div class="fcards">
@@ -1295,7 +1275,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
     <div class="photo-card">
       <img class="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300' preserveAspectRatio='xMidYMid slice'%3E%3Crect width='400' height='300' fill='%23D6E6FF'/%3E%3Ccircle cx='310' cy='80' r='38' fill='%23fff' opacity='.7'/%3E%3Cpath d='M0 230 Q90 170 180 215 T400 200 V300 H0Z' fill='%232E8BFF' opacity='.55'/%3E%3Cpath d='M0 260 Q120 215 230 250 T400 240 V300 H0Z' fill='%232E8BFF' opacity='.85'/%3E%3Cg transform='translate%28170 112%29' fill='none' stroke='%232B2B3A' stroke-width='5' stroke-linejoin='round' opacity='.55'%3E%3Crect x='0' y='10' width='60' height='42' rx='8'/%3E%3Ccircle cx='30' cy='31' r='11'/%3E%3Cpath d='M18 10 l5 -8 h14 l5 8'/%3E%3C/g%3E%3Ctext x='200' y='192' text-anchor='middle' font-family='Nunito,Arial' font-weight='800' font-size='17' fill='%232B2B3A' opacity='.6'%3EPhoto placeholder%3C/text%3E%3C/svg%3E" alt="Photo placeholder" loading="lazy" decoding="async">    </div>
     <div class="prose">
-      <span class="eyebrow">What you eat</span>
       <h2>tooth-friendly eating</h2>
       <p>We all know a good diet keeps us healthy, and good oral health depends on a balanced diet too.</p>
       <p>The Canadian and American Academies of Pediatric Dentistry recommend <strong>three meals a day with healthy snacks in between</strong>, such as:</p>
@@ -1308,7 +1287,7 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 
 <section class="faq-sec">
   <div class="wrap narrow">
-    <div class="sec-head center"><span class="eyebrow">Good to know</span><h2>brushing & diet questions</h2></div>
+    <div class="sec-head center"><h2>brushing & diet questions</h2></div>
     <div class="faq">
               <details open><summary>How much toothpaste should my child use?</summary><div class="faq-a"><p>A rice-grain sized smear for babies, and a pea-sized amount for toddlers and older children, as recommended by the Canadian and American Academies of Pediatric Dentistry.</p></div></details>
               <details><summary>When can my child brush on their own?</summary><div class="faq-a"><p>We encourage children to brush their own teeth as soon as they can, with a parent finishing the job afterwards. This helps build their manual dexterity while making sure every tooth gets clean.</p></div></details>
@@ -1317,7 +1296,7 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
   </div>
 </section>
 
-<section class="related"><div class="wrap"><div class="sec-head center"><span class="eyebrow">Keep exploring</span><h2>more ways we care for smiles</h2></div><div class="svc-grid"><a class="svc" href="#prevention"><div class="svc-top" style="background:var(--leaf)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-shield"/></svg></div><div class="svc-body"><span class="tag">All ages</span><h3>Prevention</h3><p>Gentle cleanings, fluoride varnish twice a year, sealants for molars and mouth guards for sports.</p><span class="more">Learn more →</span></div></a><a class="svc" href="#orthodontics"><div class="svc-top" style="background:var(--sky)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-braces"/></svg></div><div class="svc-body"><span class="tag">Ages 6–13</span><h3>Early Orthodontics</h3><p>Catch crowding, narrow arches, protruding teeth and thumb-sucking habits early, while your child is still growing.</p><span class="more">Learn more →</span></div></a><a class="svc" href="#digital-x-rays"><div class="svc-top" style="background:var(--sun)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-xray"/></svg></div><div class="svc-body"><span class="tag">Safe &amp; low-dose</span><h3>Digital X-Rays</h3><p>See what the eye can't. Our digital X-rays use up to 70% less radiation than traditional film.</p><span class="more">Learn more →</span></div></a></div></div></section><section class="cta-wrap">
+<section class="related"><div class="wrap"><div class="sec-head center"><h2>more ways we care for smiles</h2></div><div class="svc-grid"><a class="svc" href="#prevention"><div class="svc-top" style="background:var(--leaf)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-shield"/></svg></div><div class="svc-body"><span class="tag">All ages</span><h3>Prevention</h3><p>Gentle cleanings, fluoride varnish twice a year, sealants for molars and mouth guards for sports.</p><span class="more">Learn more →</span></div></a><a class="svc" href="#orthodontics"><div class="svc-top" style="background:var(--sky)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-braces"/></svg></div><div class="svc-body"><span class="tag">Ages 6–13</span><h3>Early Orthodontics</h3><p>Catch crowding, narrow arches, protruding teeth and thumb-sucking habits early, while your child is still growing.</p><span class="more">Learn more →</span></div></a><a class="svc" href="#digital-x-rays"><div class="svc-top" style="background:var(--sun)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-xray"/></svg></div><div class="svc-body"><span class="tag">Safe &amp; low-dose</span><h3>Digital X-Rays</h3><p>See what the eye can't. Our digital X-rays use up to 70% less radiation than traditional film.</p><span class="more">Learn more →</span></div></a></div></div></section><section class="cta-wrap">
   <div class="wrap">
     <div class="cta-band">
       <svg class="cta-giraffe" viewBox="0 0 200 260" aria-hidden="true"><use href="#giraffe"/></svg>
@@ -1337,7 +1316,7 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
   <div class="wrap phero-grid">
     <div>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a> <span aria-hidden="true">›</span> <a href="#services">Services</a> <span aria-hidden="true">›</span> <span aria-current="page">Early orthodontics</span></nav>
-      <span class="eyebrow">Interceptive orthodontics</span>      <h1>straighter smiles, <span>started early</span></h1>
+      <h1>straighter smiles, <span>started early</span></h1>
       <p class="lead">Between six and thirteen, children grow enormously. Spotting orthodontic needs early lets us use that growth to your child's advantage and can shorten treatment later.</p>            <div class="hero-ctas">
         <a class="btn" href="#contact-us">Book a visit</a>
         <a class="btn btn-white" href="tel:5550100000">Call (555) 010-0000</a>
@@ -1357,7 +1336,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 <section>
   <div class="wrap split">
     <div class="prose">
-      <span class="eyebrow">The benefits</span>
       <h2>what is interceptive orthodontics?</h2>
       <p>Children's teeth are transitional and go through many changes. Orthodontic needs can often be <strong>picked up at this early stage</strong>. Treating them now is called <strong>interceptive orthodontics</strong>, also known as First-Phase or Phase-One orthodontics.</p>
       <p>It takes advantage of your child's natural growth potential and <strong>can lessen orthodontic treatment time later</strong>. Early treatment typically begins around <strong>age 8 or 9</strong>.</p>
@@ -1372,7 +1350,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 <section class="bg-cream">
   <div class="wrap">
     <div class="sec-head center">
-      <span class="eyebrow">Examples of early treatment</span>
       <h2>what we can help with</h2>
     </div>
     <div class="fcards">
@@ -1394,7 +1371,7 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 
 <section class="faq-sec">
   <div class="wrap narrow">
-    <div class="sec-head center"><span class="eyebrow">Good to know</span><h2>orthodontic questions</h2></div>
+    <div class="sec-head center"><h2>orthodontic questions</h2></div>
     <div class="faq">
               <details open><summary>What age is best for early orthodontics?</summary><div class="faq-a"><p>Children go through enormous growth between ages 6 and 13. Orthodontic needs can often be spotted in this window, and early (Phase-One) treatment typically begins around age 8 or 9.</p></div></details>
               <details><summary>Does early treatment mean my child won't need braces later?</summary><div class="faq-a"><p>Interceptive treatment takes advantage of your child's growth and can lessen orthodontic treatment time later. Dr. Your Name will talk you through what to expect for your child.</p></div></details>
@@ -1403,7 +1380,7 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
   </div>
 </section>
 
-<section class="related"><div class="wrap"><div class="sec-head center"><span class="eyebrow">Keep exploring</span><h2>more ways we care for smiles</h2></div><div class="svc-grid"><a class="svc" href="#prevention"><div class="svc-top" style="background:var(--leaf)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-shield"/></svg></div><div class="svc-body"><span class="tag">All ages</span><h3>Prevention</h3><p>Gentle cleanings, fluoride varnish twice a year, sealants for molars and mouth guards for sports.</p><span class="more">Learn more →</span></div></a><a class="svc" href="#oral-hygiene-diet"><div class="svc-top" style="background:var(--pink)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-brush"/></svg></div><div class="svc-body"><span class="tag">Babies &amp; up</span><h3>Oral Hygiene &amp; Diet</h3><p>Brushing habits that last a lifetime: twice a day, two minutes, the right amount of toothpaste and tooth-friendly snacks.</p><span class="more">Learn more →</span></div></a><a class="svc" href="#digital-x-rays"><div class="svc-top" style="background:var(--sun)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-xray"/></svg></div><div class="svc-body"><span class="tag">Safe &amp; low-dose</span><h3>Digital X-Rays</h3><p>See what the eye can't. Our digital X-rays use up to 70% less radiation than traditional film.</p><span class="more">Learn more →</span></div></a></div></div></section><section class="cta-wrap">
+<section class="related"><div class="wrap"><div class="sec-head center"><h2>more ways we care for smiles</h2></div><div class="svc-grid"><a class="svc" href="#prevention"><div class="svc-top" style="background:var(--leaf)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-shield"/></svg></div><div class="svc-body"><span class="tag">All ages</span><h3>Prevention</h3><p>Gentle cleanings, fluoride varnish twice a year, sealants for molars and mouth guards for sports.</p><span class="more">Learn more →</span></div></a><a class="svc" href="#oral-hygiene-diet"><div class="svc-top" style="background:var(--pink)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-brush"/></svg></div><div class="svc-body"><span class="tag">Babies &amp; up</span><h3>Oral Hygiene &amp; Diet</h3><p>Brushing habits that last a lifetime: twice a day, two minutes, the right amount of toothpaste and tooth-friendly snacks.</p><span class="more">Learn more →</span></div></a><a class="svc" href="#digital-x-rays"><div class="svc-top" style="background:var(--sun)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-xray"/></svg></div><div class="svc-body"><span class="tag">Safe &amp; low-dose</span><h3>Digital X-Rays</h3><p>See what the eye can't. Our digital X-rays use up to 70% less radiation than traditional film.</p><span class="more">Learn more →</span></div></a></div></div></section><section class="cta-wrap">
   <div class="wrap">
     <div class="cta-band">
       <svg class="cta-giraffe" viewBox="0 0 200 260" aria-hidden="true"><use href="#giraffe"/></svg>
@@ -1423,7 +1400,7 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
   <div class="wrap phero-grid">
     <div>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a> <span aria-hidden="true">›</span> <a href="#services">Services</a> <span aria-hidden="true">›</span> <span aria-current="page">Digital X-rays</span></nav>
-      <span class="eyebrow">Digital X-rays</span>      <h1>seeing what <span>eyes can't</span></h1>
+      <h1>seeing what <span>eyes can't</span></h1>
       <p class="lead">Digital X-rays let us properly monitor your child's development and spot problems that can't be seen with the naked eye, with far less radiation.</p>            <div class="hero-ctas">
         <a class="btn" href="#contact-us">Book a visit</a>
         <a class="btn btn-white" href="tel:5550100000">Call (555) 010-0000</a>
@@ -1454,7 +1431,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 <section class="bg-cream">
   <div class="wrap split">
     <div class="prose">
-      <span class="eyebrow">It's helpful</span>
       <h2>a complete blueprint of your child's mouth</h2>
       <p>A dental X-ray gives Dr. Your Name a complete picture of your child's mouth. It helps her:</p>
       <ul class="ticks">
@@ -1475,7 +1451,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
       <img class="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300' preserveAspectRatio='xMidYMid slice'%3E%3Crect width='400' height='300' fill='%23FFE0CC'/%3E%3Ccircle cx='310' cy='80' r='38' fill='%23fff' opacity='.7'/%3E%3Cpath d='M0 230 Q90 170 180 215 T400 200 V300 H0Z' fill='%23FF7A1A' opacity='.55'/%3E%3Cpath d='M0 260 Q120 215 230 250 T400 240 V300 H0Z' fill='%23FF7A1A' opacity='.85'/%3E%3Cg transform='translate%28170 112%29' fill='none' stroke='%232B2B3A' stroke-width='5' stroke-linejoin='round' opacity='.55'%3E%3Crect x='0' y='10' width='60' height='42' rx='8'/%3E%3Ccircle cx='30' cy='31' r='11'/%3E%3Cpath d='M18 10 l5 -8 h14 l5 8'/%3E%3C/g%3E%3Ctext x='200' y='192' text-anchor='middle' font-family='Nunito,Arial' font-weight='800' font-size='17' fill='%232B2B3A' opacity='.6'%3EPhoto placeholder%3C/text%3E%3C/svg%3E" alt="Photo placeholder" loading="lazy" decoding="async">      <svg class="peek" viewBox="0 0 200 260" aria-hidden="true"><use href="#giraffe"/></svg>
     </div>
     <div class="prose">
-      <span class="eyebrow">Keeping safe</span>
       <h2>x-ray safety</h2>
       <p>X-ray images are an important tool for any dentist. They help us <strong>pick up dental decay early</strong> and see <strong>how far decay has spread</strong>, and they help us notice developmental anomalies in growth.</p>
       <p>At our office we use <strong>digital X-ray machines</strong>, which give off <strong>up to seventy percent less radiation</strong> than conventional X-rays.</p>
@@ -1486,7 +1461,7 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 
 <section class="faq-sec">
   <div class="wrap narrow">
-    <div class="sec-head center"><span class="eyebrow">Good to know</span><h2>x-ray questions</h2></div>
+    <div class="sec-head center"><h2>x-ray questions</h2></div>
     <div class="faq">
               <details open><summary>Are dental X-rays safe for children?</summary><div class="faq-a"><p>Safety is our main concern. We use digital X-ray machines, which give off up to 70% less radiation than conventional X-rays.</p></div></details>
               <details><summary>Why does my child need X-rays?</summary><div class="faq-a"><p>X-rays show what can't be seen with the naked eye: early cavities, how far decay has spread, tooth injuries, and how adult teeth are developing.</p></div></details>
@@ -1494,7 +1469,7 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
   </div>
 </section>
 
-<section class="related"><div class="wrap"><div class="sec-head center"><span class="eyebrow">Keep exploring</span><h2>more ways we care for smiles</h2></div><div class="svc-grid"><a class="svc" href="#prevention"><div class="svc-top" style="background:var(--leaf)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-shield"/></svg></div><div class="svc-body"><span class="tag">All ages</span><h3>Prevention</h3><p>Gentle cleanings, fluoride varnish twice a year, sealants for molars and mouth guards for sports.</p><span class="more">Learn more →</span></div></a><a class="svc" href="#oral-hygiene-diet"><div class="svc-top" style="background:var(--pink)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-brush"/></svg></div><div class="svc-body"><span class="tag">Babies &amp; up</span><h3>Oral Hygiene &amp; Diet</h3><p>Brushing habits that last a lifetime: twice a day, two minutes, the right amount of toothpaste and tooth-friendly snacks.</p><span class="more">Learn more →</span></div></a><a class="svc" href="#orthodontics"><div class="svc-top" style="background:var(--sky)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-braces"/></svg></div><div class="svc-body"><span class="tag">Ages 6–13</span><h3>Early Orthodontics</h3><p>Catch crowding, narrow arches, protruding teeth and thumb-sucking habits early, while your child is still growing.</p><span class="more">Learn more →</span></div></a></div></div></section><section class="cta-wrap">
+<section class="related"><div class="wrap"><div class="sec-head center"><h2>more ways we care for smiles</h2></div><div class="svc-grid"><a class="svc" href="#prevention"><div class="svc-top" style="background:var(--leaf)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-shield"/></svg></div><div class="svc-body"><span class="tag">All ages</span><h3>Prevention</h3><p>Gentle cleanings, fluoride varnish twice a year, sealants for molars and mouth guards for sports.</p><span class="more">Learn more →</span></div></a><a class="svc" href="#oral-hygiene-diet"><div class="svc-top" style="background:var(--pink)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-brush"/></svg></div><div class="svc-body"><span class="tag">Babies &amp; up</span><h3>Oral Hygiene &amp; Diet</h3><p>Brushing habits that last a lifetime: twice a day, two minutes, the right amount of toothpaste and tooth-friendly snacks.</p><span class="more">Learn more →</span></div></a><a class="svc" href="#orthodontics"><div class="svc-top" style="background:var(--sky)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-braces"/></svg></div><div class="svc-body"><span class="tag">Ages 6–13</span><h3>Early Orthodontics</h3><p>Catch crowding, narrow arches, protruding teeth and thumb-sucking habits early, while your child is still growing.</p><span class="more">Learn more →</span></div></a></div></div></section><section class="cta-wrap">
   <div class="wrap">
     <div class="cta-band">
       <svg class="cta-giraffe" viewBox="0 0 200 260" aria-hidden="true"><use href="#giraffe"/></svg>
@@ -1514,7 +1489,7 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
   <div class="wrap phero-grid">
     <div>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a> <span aria-hidden="true">›</span> <a href="#services">Services</a> <span aria-hidden="true">›</span> <span aria-current="page">Sedation options</span></nav>
-      <span class="eyebrow">Sedation options</span>      <h1>calm, comfortable care for <span>anxious kids</span></h1>
+      <h1>calm, comfortable care for <span>anxious kids</span></h1>
       <p class="lead">We make every effort to keep our young patients comfortable and safe. For children with dental anxiety, sedation can help, from routine cleanings to fillings and other treatments.</p>            <div class="hero-ctas">
         <a class="btn" href="#contact-us">Book a visit</a>
         <a class="btn btn-white" href="tel:5550100000">Call (555) 010-0000</a>
@@ -1534,7 +1509,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 <section>
   <div class="wrap split">
     <div class="prose">
-      <span class="eyebrow">For the apprehensive patient</span>
       <h2>one size does not fit all</h2>
       <p>As specialists in pediatric dentistry, we're trained to help most children feel at ease using recognized <strong>behaviour management techniques</strong>.</p>
       <p>Some children have more severe anxiety, or are simply at the <strong>pre-cooperative age</strong>. For these patients we offer different levels of sedation.</p>
@@ -1548,7 +1522,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 <section class="bg-cream">
   <div class="wrap narrow">
     <div class="sec-head center">
-      <span class="eyebrow">Your options</span>
       <h2>levels of sedation we offer</h2>
     </div>
     <div class="options">
@@ -1576,7 +1549,7 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 
 <section class="faq-sec">
   <div class="wrap narrow">
-    <div class="sec-head center"><span class="eyebrow">Good to know</span><h2>sedation questions</h2></div>
+    <div class="sec-head center"><h2>sedation questions</h2></div>
     <div class="faq">
               <details open><summary>Is my child asleep with oral sedation?</summary><div class="faq-a"><p>No. Oral sedation reduces anxiety and causes some drowsiness, but your child is not fully asleep.</p></div></details>
               <details><summary>What does laughing gas do?</summary><div class="faq-a"><p>Nitrous oxide reduces anxiety and has a mild pain-relieving (analgesic) effect.</p></div></details>
@@ -1585,7 +1558,7 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
   </div>
 </section>
 
-<section class="related"><div class="wrap"><div class="sec-head center"><span class="eyebrow">Keep exploring</span><h2>more ways we care for smiles</h2></div><div class="svc-grid"><a class="svc" href="#prevention"><div class="svc-top" style="background:var(--leaf)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-shield"/></svg></div><div class="svc-body"><span class="tag">All ages</span><h3>Prevention</h3><p>Gentle cleanings, fluoride varnish twice a year, sealants for molars and mouth guards for sports.</p><span class="more">Learn more →</span></div></a><a class="svc" href="#oral-hygiene-diet"><div class="svc-top" style="background:var(--pink)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-brush"/></svg></div><div class="svc-body"><span class="tag">Babies &amp; up</span><h3>Oral Hygiene &amp; Diet</h3><p>Brushing habits that last a lifetime: twice a day, two minutes, the right amount of toothpaste and tooth-friendly snacks.</p><span class="more">Learn more →</span></div></a><a class="svc" href="#orthodontics"><div class="svc-top" style="background:var(--sky)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-braces"/></svg></div><div class="svc-body"><span class="tag">Ages 6–13</span><h3>Early Orthodontics</h3><p>Catch crowding, narrow arches, protruding teeth and thumb-sucking habits early, while your child is still growing.</p><span class="more">Learn more →</span></div></a></div></div></section><section class="cta-wrap">
+<section class="related"><div class="wrap"><div class="sec-head center"><h2>more ways we care for smiles</h2></div><div class="svc-grid"><a class="svc" href="#prevention"><div class="svc-top" style="background:var(--leaf)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-shield"/></svg></div><div class="svc-body"><span class="tag">All ages</span><h3>Prevention</h3><p>Gentle cleanings, fluoride varnish twice a year, sealants for molars and mouth guards for sports.</p><span class="more">Learn more →</span></div></a><a class="svc" href="#oral-hygiene-diet"><div class="svc-top" style="background:var(--pink)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-brush"/></svg></div><div class="svc-body"><span class="tag">Babies &amp; up</span><h3>Oral Hygiene &amp; Diet</h3><p>Brushing habits that last a lifetime: twice a day, two minutes, the right amount of toothpaste and tooth-friendly snacks.</p><span class="more">Learn more →</span></div></a><a class="svc" href="#orthodontics"><div class="svc-top" style="background:var(--sky)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-braces"/></svg></div><div class="svc-body"><span class="tag">Ages 6–13</span><h3>Early Orthodontics</h3><p>Catch crowding, narrow arches, protruding teeth and thumb-sucking habits early, while your child is still growing.</p><span class="more">Learn more →</span></div></a></div></div></section><section class="cta-wrap">
   <div class="wrap">
     <div class="cta-band">
       <svg class="cta-giraffe" viewBox="0 0 200 260" aria-hidden="true"><use href="#giraffe"/></svg>
@@ -1605,7 +1578,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
   <div class="wrap phero-grid">
     <div>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a> <span aria-hidden="true">›</span> <a href="#services">Services</a> <span aria-hidden="true">›</span> <span aria-current="page">Emergencies</span></nav>
-      <span class="eyebrow">Dental emergencies</span>
       <h1>accidents happen. <span>we're here to help.</span></h1>
       <p class="lead">For any dental emergency, call us as soon as you can. We'll talk you through the next steps, reassure you, and arrange the earliest possible appointment.</p>
       <div class="hero-ctas">
@@ -1625,7 +1597,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 <section>
   <div class="wrap narrow">
     <div class="sec-head center">
-      <span class="eyebrow">Accidents happen</span>
       <h2>knocked-out tooth? do this:</h2>
     </div>
     <div class="big-rule">Never put a baby tooth back into the mouth</div>
@@ -1641,7 +1612,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 <section class="bg-cream">
   <div class="wrap split">
     <div class="prose">
-      <span class="eyebrow">How to tell</span>
       <h2>when is it an emergency?</h2>
       <p>As children grow up and lead more active lives, the chance of injury goes up. Blows to the head or mouth can seriously damage teeth and need immediate attention from a children's dentist.</p>
       <p>Some emergencies are easy to spot. For example, <strong>a lot of bleeding from the mouth after a blow to the face</strong> is a clear sign to seek emergency dental care right away.</p>
@@ -1663,7 +1633,7 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
   </div>
 </section>
 
-<section class="related"><div class="wrap"><div class="sec-head center"><span class="eyebrow">Keep exploring</span><h2>more ways we care for smiles</h2></div><div class="svc-grid"><a class="svc" href="#prevention"><div class="svc-top" style="background:var(--leaf)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-shield"/></svg></div><div class="svc-body"><span class="tag">All ages</span><h3>Prevention</h3><p>Gentle cleanings, fluoride varnish twice a year, sealants for molars and mouth guards for sports.</p><span class="more">Learn more →</span></div></a><a class="svc" href="#oral-hygiene-diet"><div class="svc-top" style="background:var(--pink)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-brush"/></svg></div><div class="svc-body"><span class="tag">Babies &amp; up</span><h3>Oral Hygiene &amp; Diet</h3><p>Brushing habits that last a lifetime: twice a day, two minutes, the right amount of toothpaste and tooth-friendly snacks.</p><span class="more">Learn more →</span></div></a><a class="svc" href="#orthodontics"><div class="svc-top" style="background:var(--sky)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-braces"/></svg></div><div class="svc-body"><span class="tag">Ages 6–13</span><h3>Early Orthodontics</h3><p>Catch crowding, narrow arches, protruding teeth and thumb-sucking habits early, while your child is still growing.</p><span class="more">Learn more →</span></div></a></div></div></section><section class="cta-wrap">
+<section class="related"><div class="wrap"><div class="sec-head center"><h2>more ways we care for smiles</h2></div><div class="svc-grid"><a class="svc" href="#prevention"><div class="svc-top" style="background:var(--leaf)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-shield"/></svg></div><div class="svc-body"><span class="tag">All ages</span><h3>Prevention</h3><p>Gentle cleanings, fluoride varnish twice a year, sealants for molars and mouth guards for sports.</p><span class="more">Learn more →</span></div></a><a class="svc" href="#oral-hygiene-diet"><div class="svc-top" style="background:var(--pink)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-brush"/></svg></div><div class="svc-body"><span class="tag">Babies &amp; up</span><h3>Oral Hygiene &amp; Diet</h3><p>Brushing habits that last a lifetime: twice a day, two minutes, the right amount of toothpaste and tooth-friendly snacks.</p><span class="more">Learn more →</span></div></a><a class="svc" href="#orthodontics"><div class="svc-top" style="background:var(--sky)"><svg class="" viewBox="0 0 80 80" aria-hidden="true"><use href="#i-braces"/></svg></div><div class="svc-body"><span class="tag">Ages 6–13</span><h3>Early Orthodontics</h3><p>Catch crowding, narrow arches, protruding teeth and thumb-sucking habits early, while your child is still growing.</p><span class="more">Learn more →</span></div></a></div></div></section><section class="cta-wrap">
   <div class="wrap">
     <div class="cta-band">
       <svg class="cta-giraffe" viewBox="0 0 200 260" aria-hidden="true"><use href="#giraffe"/></svg>
@@ -1683,7 +1653,7 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
   <div class="wrap phero-grid">
     <div>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a> <span aria-hidden="true">›</span> <a href="#about">About</a> <span aria-hidden="true">›</span> <span aria-current="page">Gallery</span></nav>
-      <span class="eyebrow">Gallery</span>      <h1>our office &amp; <span>our community</span></h1>
+      <h1>our office &amp; <span>our community</span></h1>
       <p class="lead">Take a look inside our bright new office, and see what we get up to around Your City and beyond.</p>          </div>
     <div class="phero-art" aria-hidden="true">
       <div class="blob"></div>
@@ -1825,7 +1795,7 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
   <div class="wrap phero-grid">
     <div>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a> <span aria-hidden="true">›</span> <span aria-current="page">Kids dentist in Your City</span></nav>
-      <span class="eyebrow">Your City · Your Area</span>      <h1>children's dentist in <span>Your City</span></h1>
+      <h1>children's dentist in <span>Your City</span></h1>
       <p class="lead">Pediatric dental care in Your City, close to nearby communities, for infants, toddlers, children and teenagers, including patients with special needs and complex medical issues.</p>            <div class="hero-ctas">
         <a class="btn" href="#contact-us">Book a visit</a>
         <a class="btn btn-white" href="tel:5550100000">Call (555) 010-0000</a>
@@ -1844,7 +1814,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 <section>
   <div class="wrap split">
     <div class="prose">
-      <span class="eyebrow">Welcome</span>
       <h2>made for smiles</h2>
       <p>Dr. Your Name and her team create a <strong>family-friendly atmosphere</strong> that supports every part of your child's dental care, from start to finish.</p>
       <p>From the very first visit, we aim to give a positive, compassionate and inclusive experience that builds a long-lasting relationship between your family and ours. Your child's dental health reflects their overall health and well-being, and that is our highest priority.</p>
@@ -1859,7 +1828,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 <section class="bg-cream">
   <div class="wrap">
     <div class="sec-head center">
-      <span class="eyebrow">What we're proud to offer</span>
       <h2>care for every age and stage</h2>
     </div>
     <div class="fcards">
@@ -1876,7 +1844,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 <section>
   <div class="wrap">
     <div class="sec-head center">
-      <span class="eyebrow">Our services</span>
       <h2>everything your child needs</h2>
     </div>
     <div class="svc-grid">
@@ -1887,14 +1854,13 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
 <section class="bg-cream">
   <div class="wrap visit-grid">
     <div class="prose" style="align-self:center">
-      <span class="eyebrow">Visit us</span>
       <h2>easy to find in Your City</h2>
       <p>We're at <strong>123 Main Street, Suite 100, Your City, Province A1B 2C3</strong>, near the town centre, serving families across <strong>Your City, nearby communities</strong> and the region.</p>
       <p>We look forward to being your son or daughter's dental home, and to making every visit fun, relaxed and easy.</p>
       <div class="hero-ctas"><a class="btn" href="#contact-us">Book a visit</a><a class="btn btn-white" href="#contact-us" target="_blank" rel="noopener">Get directions</a></div>
     </div>
     <div class="card">
-  <div class="map-ph" role="img" aria-label="Map placeholder"><svg viewBox="0 0 80 80" aria-hidden="true"><path d="M40 8 C26 8 16 18 16 31 C16 48 40 72 40 72 C40 72 64 48 64 31 C64 18 54 8 40 8 Z" fill="#FF6B9A"/><circle cx="40" cy="31" r="9" fill="#fff"/></svg><span>Map placeholder</span></div>  <div class="info">
+  <div class="map"><div class="map-ph" role="img" aria-label="Map placeholder"><svg viewBox="0 0 80 80" aria-hidden="true"><path d="M40 8 C26 8 16 18 16 31 C16 48 40 72 40 72 C40 72 64 48 64 31 C64 18 54 8 40 8 Z" fill="#FF6B9A"/><circle cx="40" cy="31" r="9" fill="#fff"/></svg><span>Map placeholder</span></div></div>  <div class="info">
     <div><span class="ic" style="background:#E6F7E9">📍</span><span><b>123 Main Street, Suite 100</b><span>Your City, Province A1B 2C3 · near the town centre</span><br><a href="#contact-us" target="_blank" rel="noopener" class="link">Get directions →</a></span></div>
     <div><span class="ic" style="background:#E5F0FF">📞</span><span><b><a href="tel:5550100000" style="color:var(--ink)">(555) 010-0000</a></b><a href="mailto:hello@yourclinic.com">hello@yourclinic.com</a></span></div>
   </div>
@@ -1926,7 +1892,7 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
   <div class="wrap phero-grid">
     <div>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a> <span aria-hidden="true">›</span> <span aria-current="page">Contact</span></nav>
-      <span class="eyebrow">Contact us</span>      <h1>let's get your child's <span>smile booked</span></h1>
+      <h1>let's get your child's <span>smile booked</span></h1>
       <p class="lead">Send us an appointment request below, or call our friendly front desk. We'd love to hear from you!</p>          </div>
     <div class="phero-art" aria-hidden="true">
       <div class="blob"></div>
@@ -1977,7 +1943,7 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
       <div>
         <h2 style="font-size:1.8rem;margin-bottom:16px">find us</h2>
         <div class="card">
-  <div class="map-ph" role="img" aria-label="Map placeholder"><svg viewBox="0 0 80 80" aria-hidden="true"><path d="M40 8 C26 8 16 18 16 31 C16 48 40 72 40 72 C40 72 64 48 64 31 C64 18 54 8 40 8 Z" fill="#FF6B9A"/><circle cx="40" cy="31" r="9" fill="#fff"/></svg><span>Map placeholder</span></div>  <div class="info">
+  <div class="map"><div class="map-ph" role="img" aria-label="Map placeholder"><svg viewBox="0 0 80 80" aria-hidden="true"><path d="M40 8 C26 8 16 18 16 31 C16 48 40 72 40 72 C40 72 64 48 64 31 C64 18 54 8 40 8 Z" fill="#FF6B9A"/><circle cx="40" cy="31" r="9" fill="#fff"/></svg><span>Map placeholder</span></div></div>  <div class="info">
     <div><span class="ic" style="background:#E6F7E9">📍</span><span><b>123 Main Street, Suite 100</b><span>Your City, Province A1B 2C3 · near the town centre</span><br><a href="#contact-us" target="_blank" rel="noopener" class="link">Get directions →</a></span></div>
     <div><span class="ic" style="background:#E5F0FF">📞</span><span><b><a href="tel:5550100000" style="color:var(--ink)">(555) 010-0000</a></b><a href="mailto:hello@yourclinic.com">hello@yourclinic.com</a></span></div>
   </div>
@@ -1997,7 +1963,6 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
       <img class="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300' preserveAspectRatio='xMidYMid slice'%3E%3Crect width='400' height='300' fill='%23FFD9E5'/%3E%3Ccircle cx='310' cy='80' r='38' fill='%23fff' opacity='.7'/%3E%3Cpath d='M0 230 Q90 170 180 215 T400 200 V300 H0Z' fill='%23FF6B9A' opacity='.55'/%3E%3Cpath d='M0 260 Q120 215 230 250 T400 240 V300 H0Z' fill='%23FF6B9A' opacity='.85'/%3E%3Cg transform='translate%28170 112%29' fill='none' stroke='%232B2B3A' stroke-width='5' stroke-linejoin='round' opacity='.55'%3E%3Crect x='0' y='10' width='60' height='42' rx='8'/%3E%3Ccircle cx='30' cy='31' r='11'/%3E%3Cpath d='M18 10 l5 -8 h14 l5 8'/%3E%3C/g%3E%3Ctext x='200' y='192' text-anchor='middle' font-family='Nunito,Arial' font-weight='800' font-size='17' fill='%232B2B3A' opacity='.6'%3EPhoto placeholder%3C/text%3E%3C/svg%3E" alt="Photo placeholder" loading="lazy" decoding="async">      <span class="sticker">Look for our windows! 🦒</span>
     </div>
     <div class="prose">
-      <span class="eyebrow">Getting here</span>
       <h2>in the heart of Your City</h2>
       <p>You'll find us at <strong>123 Main Street, Suite 100, Your City, Province A1B 2C3</strong>, near the town centre. Look for the bright illustrated windows!</p>
       <p>We're also close to public transit, and close to nearby communities.</p>
@@ -2017,7 +1982,7 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
   <div class="wrap phero-grid">
     <div>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a> <span aria-hidden="true">›</span> <span aria-current="page">For dentists</span></nav>
-      <span class="eyebrow">For dentists &amp; doctors</span>      <h1>refer a patient to <span>Dr. Your Name</span></h1>
+      <h1>refer a patient to <span>Dr. Your Name</span></h1>
       <p class="lead">Thank you for trusting us with your young patients. Send your referral online and our team will contact the family to book.</p>          </div>
     <div class="phero-art" aria-hidden="true">
       <div class="blob"></div>
@@ -2113,7 +2078,7 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
   <div class="wrap phero-grid">
     <div>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a> <span aria-hidden="true">›</span> <span aria-current="page">Privacy policy</span></nav>
-            <h1>privacy <span>policy</span></h1>
+      <h1>privacy <span>policy</span></h1>
       <p class="lead">Your Clinic ("we", "our" or "us") is committed to protecting your privacy.</p>          </div>
     <div class="phero-art" aria-hidden="true">
       <div class="blob"></div>
