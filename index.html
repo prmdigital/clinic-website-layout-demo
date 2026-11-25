@@ -239,7 +239,6 @@ label.check a{color:var(--green-d);font-weight:800}
   .doc-photo{max-width:440px}
 }
 @media (max-width:620px){
-  body{font-size:17px}
   section{padding:64px 0}
   .nav-cta .btn{display:none}
   .trust-grid,.svc-grid,.rev-grid,.steps{grid-template-columns:1fr}
@@ -463,6 +462,18 @@ legend{font-weight:800;font-size:.9rem;margin-bottom:6px}
   .note{flex-direction:column}
   .menu.open{max-height:calc(100vh - 160px);padding-bottom:28px}
 }
+
+/* ================= Unified body text =================
+   One size and line height for all body copy, in paragraphs and cards alike.
+   Intro lines (.lead), pull quotes (.quote), the big kid review and form small print keep their own sizes. */
+:root{--text:1.0625rem;--text-lh:1.65}
+body{font-size:var(--text)}
+.prose p,.doc p,.doc-page p,.doc-page li,.card p,.fcard p,.svc-body p,.step p,.first-note p,.tl p,.rev p,
+.note p,.option p,.faq-a,.faq-a p,.ticks li,.gal-head p,.estep span,.info span,.info a,.cta-band p,.emerg-box li{font-size:var(--text);line-height:var(--text-lh)}
+.rev.kid p{font-size:1.5rem;line-height:1.3}
+.ok p{font-size:var(--text)}
+.prose .quote,.doc .quote{font-size:1.25rem;line-height:1.5}
+.card .form-note,.form-note{font-size:.85rem;line-height:1.5}
 
 
 /* ---- layout demo additions ---- */
